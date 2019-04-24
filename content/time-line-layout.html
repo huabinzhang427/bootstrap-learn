@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时间轴排版</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .box{
+            height: 100px;
+            background-color: blueviolet;
+            border: 1px solid white;
+        }
+        /* 伪元素绘制时间轴 */
+        /* 相对定位 */
+        .timeline-section{ 
+            position: relative;
+        }
+        /* 绝对定位 */
+        .timeline-section::after{
+            content: ''; /* 固定模式 */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            left: 50%; 
+            transform: translateX(-50%);
+            background-color: darkgray;
+        }
+
+        /* 时间轴圆点 */
+        .timeline-section-pointer{
+            position: relative;
+        }
+        .timeline-section-pointer::after{
+            content: ''; /* 固定模式 */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 3px solid darkgray;
+            left: 50%; 
+            transform: translateX(-50%);
+            z-index: 1;
+            background-color: white;
+        }
+        /* 以下使用特定属性 */
+        @media (max-width: 576px) { 
+            .timeline-section::after,
+            .timeline-section-pointer::after{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="timeline-section">
+                <div class="row timeline-section-pointer">
+                        <div class="col-sm-6">
+                            <h3>Ubisoft 宣布《刺客教条：大革命》一周限时免费！</h3>
+                            <p>法国巴黎的著名古迹「圣母院」遭到大火，在紧急抢救之下，还是有部分建筑受损需要重建，修复过程将会很漫长，而游戏厂商 Ubisoft 宣布，将会捐出 50 万欧元，协助巴黎圣母院重建，并决定进行《刺客教条：大革命》PC 数位版，为期一周的限时免费赠送，让大家能够在游戏中保留圣母院的美丽景象</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+            
+                    <div class="row flex-sm-row-reverse timeline-section-pointer">
+                        <div class="col-sm-6">
+                            <h3>Ubisoft 宣布《刺客教条：大革命》一周限时免费！</h3>
+                            <p>法国巴黎的著名古迹「圣母院」遭到大火，在紧急抢救之下，还是有部分建筑受损需要重建，修复过程将会很漫长，而游戏厂商 Ubisoft 宣布，将会捐出 50 万欧元，协助巴黎圣母院重建，并决定进行《刺客教条：大革命》PC 数位版，为期一周的限时免费赠送，让大家能够在游戏中保留圣母院的美丽景象</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+            
+                    <div class="row timeline-section-pointer">
+                        <div class="col-sm-6">
+                            <h3>Ubisoft 宣布《刺客教条：大革命》一周限时免费！</h3>
+                            <p>法国巴黎的著名古迹「圣母院」遭到大火，在紧急抢救之下，还是有部分建筑受损需要重建，修复过程将会很漫长，而游戏厂商 Ubisoft 宣布，将会捐出 50 万欧元，协助巴黎圣母院重建，并决定进行《刺客教条：大革命》PC 数位版，为期一周的限时免费赠送，让大家能够在游戏中保留圣母院的美丽景象</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box"></div>
+                        </div>
+                    </div> 
+            
+                    <div class="row flex-sm-row-reverse timeline-section-pointer">
+                        <div class="col-sm-6">
+                            <h3>Ubisoft 宣布《刺客教条：大革命》一周限时免费！</h3>
+                            <p>法国巴黎的著名古迹「圣母院」遭到大火，在紧急抢救之下，还是有部分建筑受损需要重建，修复过程将会很漫长，而游戏厂商 Ubisoft 宣布，将会捐出 50 万欧元，协助巴黎圣母院重建，并决定进行《刺客教条：大革命》PC 数位版，为期一周的限时免费赠送，让大家能够在游戏中保留圣母院的美丽景象</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                
+                    <div class="row timeline-section-pointer">
+                        <div class="col-sm-6">
+                            <h3>Ubisoft 宣布《刺客教条：大革命》一周限时免费！</h3>
+                            <p>法国巴黎的著名古迹「圣母院」遭到大火，在紧急抢救之下，还是有部分建筑受损需要重建，修复过程将会很漫长，而游戏厂商 Ubisoft 宣布，将会捐出 50 万欧元，协助巴黎圣母院重建，并决定进行《刺客教条：大革命》PC 数位版，为期一周的限时免费赠送，让大家能够在游戏中保留圣母院的美丽景象</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                
+                    <div class="row flex-sm-row-reverse timeline-section-pointer">
+                        <div class="col-sm-6">
+                            <h3>Ubisoft 宣布《刺客教条：大革命》一周限时免费！</h3>
+                            <p>法国巴黎的著名古迹「圣母院」遭到大火，在紧急抢救之下，还是有部分建筑受损需要重建，修复过程将会很漫长，而游戏厂商 Ubisoft 宣布，将会捐出 50 万欧元，协助巴黎圣母院重建，并决定进行《刺客教条：大革命》PC 数位版，为期一周的限时免费赠送，让大家能够在游戏中保留圣母院的美丽景象</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box"></div>
+                        </div>
+                    </div> 
+        </div>
+        
+    </div>
+    
+    
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</body>
+</html>
